@@ -15,10 +15,10 @@ gem 'autotest'
 gem 'autotest-fsevent'
 gem 'autotest-growl'
 gem 'autotest-rails-pure'
-gem 'ZenTest'
 
 
 group :development do
+  gem 'ZenTest'
 	gem 'rspec-rails', '>= 2.1.0'
 	gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 	gem 'faker', '0.3.1'
