@@ -1,5 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
+require 'rails/all'
+
 # Pick the frameworks you want:
 require "active_record/railtie"
 require "action_controller/railtie"
@@ -39,6 +41,14 @@ module SampleApp
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    ### Part of a Spork hack. See http://bit.ly/arY19y
+    if Rails.env.test?
+        initializer :after => :initialize_dependency_mechanism do
+          # Work around initializer in railties/lib/rails/application/bootstrap.rb
+          ActiveSupport::Dependencies.mechanism = :load
+        end
+    end
+    
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
