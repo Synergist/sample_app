@@ -10,9 +10,6 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
-# Ignore the Gemfile.lock file (was causing trouble in pushing to heroku)
-/Gemfile.lock
-
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
