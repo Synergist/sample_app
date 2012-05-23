@@ -18,7 +18,7 @@ gem 'autotest-rails-pure'
 
 
 group :development do
-  gem 'ZenTest'
+  gem 'ZenTest', '~> 4.4.1'
 	gem 'rspec-rails', '>= 2.1.0'
 	gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 	gem 'faker', '0.3.1'
