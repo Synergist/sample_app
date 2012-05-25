@@ -9,4 +9,9 @@ module ApplicationHelper
       "#{base_title} | #{@title}"
     end
   end
+  
+  # Helper method for logo. See _header.html.erb for use.
+  def logo
+    logo = image_tag("logo.png", :alt => "Sample App", :class => "round")
+  end
 end
