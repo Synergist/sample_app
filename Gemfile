@@ -31,6 +31,12 @@ group :test do
 	gem 'factory_girl_rails', '1.0'
 end
 
+group :production do
+  # gem for Postgresql to make Heroku work
+  gem 'pg'
+  gem 'therubyracer', '~> 0.9.3.beta1'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
