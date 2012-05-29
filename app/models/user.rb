@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
     encrypted_password == encrypt(submitted_password)
   end
   
-  # Authenticate is a class method. We could've equivalently used: 
+  # 'authenticate' is a class method. We could've equivalently used: 
   # 1.  def User.authenticate(email, submitted_password)...end, or
   # 2.  class << self
   #       def authenticate(email, submitted_password)...end
@@ -49,7 +49,16 @@ class User < ActiveRecord::Base
     user = find_by_email(email)
     return nil if user.nil?
     return user if user.has_password?(submitted_password)
+    # if method hits neither of the two returns above,
+    # it returns nil by default
   end
+  
+  # The 'authenticate' method using the ternary operator
+  # ------------------------------------------------------------
+  # def self.authenticate(email, submitted_password)
+  #   user = find_by_email(email)
+  #   user && user.has_password?(submitted_password) ? user : nil
+  # end
   
   private
     def encrypt_password

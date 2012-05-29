@@ -27,10 +27,13 @@ section h1 {
 }
 
 /* Links */
-
 a {
 	color: #09c;
 	text-decoration: none;
+}
+
+a:visited {
+	color: #069;
 }
 
 a:hover {
@@ -38,12 +41,7 @@ a:hover {
 	text-decoration: underline;
 }
 
-a:visited {
-	color: #069;
-}
-
 /* Navigation */
-
 nav {
 	float: right;
 }
@@ -79,7 +77,6 @@ nav ul li a:hover {
 }
 
 /* Sign up Button */
-
 a.signup_button {
 	margin-left: auto;
 	margin-right: auto;
@@ -94,7 +91,6 @@ a.signup_button {
 }
 
 /* Round Corners */
-
 .round {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -102,7 +98,6 @@ a.signup_button {
 }
 
 /* Footer */
-
 footer {
 	padding-top: 10px;
 	text-align: center;
@@ -115,3 +110,55 @@ footer {
 footer nav {
 	float: none;
 }
+
+div.field, div.actions {
+	margin-bottom: 10px;
+}
+
+.field_with_errors {
+	padding: 2px;
+	background-color: red;
+	display: table;
+}
+
+.field_with_errors label {
+	color: #fff;
+}
+
+#error_explanation {
+	width: 400px;
+	border: 2px solid red;
+	padding: 7px;
+	padding-bottom: 12px;
+	margin-bottom: 20px;
+	background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+	text-align: left;
+	font-weight: bold;
+	padding: 5px 5px 5px 15px;
+	font-size: 12px;
+	margin: -7px;
+	background-color: #c00;
+	color: #fff;
+}
+
+#error_explanation p {
+	color: #333;
+	margin-bottom: 0px;
+	padding: 5px;
+}
+
+#error_explanation ul li {
+	font-size: 12px;
+	list-style: square;
+}
+
+
+
+
+
+
+
+
