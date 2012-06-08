@@ -4,7 +4,6 @@ module SessionsHelper
     # cookies.permanent.signed[:remember_token] = [user.id, user.salt]
     session[:user_id] = user.id
     self.current_user = user
-    # logger.debug "sign_in(user) - #{self.current_user}"
   end
   
   def current_user=(user)

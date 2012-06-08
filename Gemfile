@@ -22,6 +22,7 @@ group :development do
 	gem 'rspec-rails', '>= 2.1.0'
 	gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 	gem 'faker', '0.3.1'
+	gem 'ssl_requirement'
 end
 
 group :test do
@@ -29,10 +30,11 @@ group :test do
 	gem 'webrat', '0.7.1'
 	gem 'spork'
 	gem 'factory_girl_rails', '1.0'
+	gem 'ssl_requirement'
 end
 
 group :production do
-  # gem for Postgresql to make Heroku work
+  # gems for Postgresql to make Heroku work
   gem 'pg'
   gem 'therubyracer', '~> 0.9.3.beta1'
 end
