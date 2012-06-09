@@ -55,8 +55,9 @@ describe UsersController do
       describe "who are not admins" do
         it "should not have delete links" do
           get :index
-          response.should_not have_selector("a",  :"data-method" => "delete",
-                                                  :content => "delete")
+          response.should_not have_selector("input",  :class => "destroy",
+                                                      :type => "submit",
+                                                      :value => "delete")
         end
       end
       
@@ -64,8 +65,9 @@ describe UsersController do
         it "should have delete links" do
           @user.toggle!(:admin)
           get :index
-          response.should have_selector("a",  :"data-method" => "delete",
-                                              :content => "delete")
+          response.should have_selector("input",  :class => "destroy",
+                                                  :type => "submit",
+                                                  :value => "delete")
         end
       end
     end

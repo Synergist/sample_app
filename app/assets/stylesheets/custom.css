@@ -3,7 +3,7 @@
 }
 
 body {
-	background: #cff;
+	background: #B0C4DE;
 }
 
 header {
@@ -84,8 +84,8 @@ a.signup_button {
 	text-align: center;
 	width: 190px;
 	color: #fff;
-	background-color: #006400;
-	font-size: 150%;
+	background-color: #A9A9A9;
+	font-size: 200%;
 	font-weight: bold;
 	padding: 20px;
 }
@@ -161,6 +161,14 @@ ul.users {
 
 .users li {
 	list-style: none;
+}
+
+.button_to {
+  display: inline;
+}
+
+.button_to div {
+  display: inline;
 }
 
 
