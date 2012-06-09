@@ -21,7 +21,15 @@ describe UsersController do
         third = Factory(:user, :email => "third@example.com")
         @users = [@user, second, third]
         30.times do
-          @users << Factory(:user, :email => Factory.next(:email))
+          @users << Factory(:user)
+        end
+      end
+      
+      it "should not have duplicate emails" do
+        @users.each do |u1|
+          @users[u1.id..@users.length-1].each do |u2|
+            u1.email.should_not == u2.email
+          end
         end
       end
       

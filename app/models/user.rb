@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :email, :name, :password, :password_confirmation
   
+  has_many :microposts, :dependent => :destroy
+  
   # Regular expression to match emails with a valid format. 
     # \A          : match start of a string
     # [\w+\-.]+   : at least one word character, plus, hyphen, or dot
