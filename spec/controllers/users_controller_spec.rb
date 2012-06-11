@@ -110,6 +110,27 @@ describe UsersController do
       get :show, :id => @user
       response.should have_selector("h1>img", :class => "Gravatar")
     end
+    
+    it "should show the user's microposts" do
+      mp1 = FactoryGirl.create(:micropost, :user => @user, :content => "Foo bar")
+      mp2 = FactoryGirl.create(:micropost, :user => @user, :content => "Baz quux")
+      get :show, :id => @user
+      response.should have_selector("span.content", :content => mp1.content)
+      response.should have_selector("span.content", :content => mp2.content)
+    end
+    
+    it "should paginate microposts" do
+      50.times { Factory(:micropost, :user => @user, :content => "foo") }
+      get :show, :id => @user
+      response.should have_selector("div.pagination")
+    end
+    
+    it "should display the micropost count" do
+      20.times { Factory(:micropost, :user => @user, :content => "foo") }
+      get :show, :id => @user
+      response.should have_selector('td.sidebar', 
+                                    :content => @user.microposts.count.to_s)
+    end
   end
   
   describe "GET 'new'" do
