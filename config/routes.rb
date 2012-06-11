@@ -3,9 +3,14 @@ SampleApp::Application.routes.draw do
 
   resources :users do
     resources :microposts, :only => [:index]
+    member do
+      get :following, :followers
+    end
   end
-  resources :microposts, :only => [:create, :destroy]
-  resources :sessions, :only => [:new, :create, :destroy]
+  
+  resources :microposts,    :only => [:create, :destroy]
+  resources :sessions,      :only => [:new, :create, :destroy]
+  resources :relationships, :only => [:create, :destroy]
 
   
   get "pages/home"

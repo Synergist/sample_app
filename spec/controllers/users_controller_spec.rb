@@ -102,6 +102,14 @@ describe UsersController do
       get :show, :id => @user
       response.should have_selector("h1>img", :class => "Gravatar")
     end
+    
+    describe "when signed in as another user" do
+      it "should be successful" do
+        test_sign_in(FactoryGirl.create(:user))
+        get :show, :id => @user
+        response.should be_success
+      end
+    end
   end
   
   describe "GET 'new'" do
