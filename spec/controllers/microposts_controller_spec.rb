@@ -19,7 +19,7 @@ describe MicropostsController do
   describe "POST 'create'" do
     
     before(:each) do
-      @user = test_sign_in(Factory(:user))
+      @user = test_sign_in(FactoryGirl.create(:user))
     end
     
     describe "failure" do
@@ -69,9 +69,9 @@ describe MicropostsController do
     describe "for an unauthorized user" do
       
       before(:each) do
-        @user = Factory(:user)
-        wrong_user = Factory(:user)
-        @micropost = Factory(:micropost, :user => @user)
+        @user = FactoryGirl.create(:user)
+        wrong_user = FactoryGirl.create(:user)
+        @micropost = FactoryGirl.create(:micropost, :user => @user)
         test_sign_in(wrong_user)
       end
       
@@ -84,8 +84,8 @@ describe MicropostsController do
     describe "for an authorized user" do
       
       before(:each) do
-        @user = test_sign_in(Factory(:user))
-        @micropost = Factory(:micropost, :user => @user)
+        @user = test_sign_in(FactoryGirl.create(:user))
+        @micropost = FactoryGirl.create(:micropost, :user => @user)
       end
       
       it "should destory the micropost" do

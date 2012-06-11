@@ -153,9 +153,9 @@ describe User do
 
   describe "micropost associations" do
     before(:each) do
-      @user = Factory (:user)         
-      @mp1 = Factory(:micropost, :user => @user, :created_at => 1.day.ago)
-      @mp2 = Factory(:micropost, :user => @user, :created_at => 1.hour.ago)
+      @user = FactoryGirl.create(:user)         
+      @mp1 = FactoryGirl.create(:micropost, :user => @user, :created_at => 1.day.ago)
+      @mp2 = FactoryGirl.create(:micropost, :user => @user, :created_at => 1.hour.ago)
       @user.save
     end
     
@@ -183,7 +183,7 @@ describe User do
       end
       
       it "should not include a different user's microposts" do
-        mp3 = Factory(:micropost, :user => Factory(:user))
+        mp3 = FactoryGirl.create(:micropost, :user => FactoryGirl.create(:user))
         @user.feed.include?(mp3).should be_false
       end
     end
