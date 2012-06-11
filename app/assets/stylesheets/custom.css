@@ -253,7 +253,7 @@ table.profile tr td.sidebar {
 	background-color: #ccc;
 }
 
-table.front tbody tr td.sidebar {
+td.sidebar {
 	background: none repeat scroll 0 0 #CCCCCC;
 	padding: 1em;
    	vertical-align: top;
