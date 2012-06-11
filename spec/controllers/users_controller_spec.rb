@@ -21,7 +21,7 @@ describe UsersController do
         third = Factory(:user, :email => "third@example.com")
         @users = [@user, second, third]
         30.times do
-          @users << Factory(:user, :email => Factory.next(:email))
+          @users << Factory(:user)
         end
       end
       
