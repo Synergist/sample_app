@@ -1,3 +1,14 @@
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+	-moz-box-sizing: border-box; 
+  	-webkit-box-sizing: border-box; 
+  	box-sizing: border-box; 
+}
+
 .container {
 	width: 710px;
 }
@@ -64,12 +75,13 @@ nav ul li {
 }
 
 nav ul li a {
+	color: #09c;
 	padding: 0 5px;
 	font-weight: bold;
 }
 
 nav ul li a:visited {
-	color: #09c;
+	color: #069;
 }
 
 nav ul li a:hover {
@@ -109,6 +121,14 @@ footer {
 
 footer nav {
 	float: none;
+}
+
+/* Debug Info */
+.debug_dump {
+  	clear: both;
+  	float: left;
+  	width: 100%;
+	margin-top: 45px;
 }
 
 div.field, div.actions {
@@ -172,9 +192,81 @@ ul.users {
 }
 
 
+h1.micropost {
+	margin-bottom: 0.3em;
+}
+
+/* Microposts Feed */
+table.microposts {
+	margin-top: 1em;
+}
+
+table.microposts tr {
+	height: 60px;
+}
+
+table.microposts tr td.gravatar {
+	border-top: 1px solid #ccc;
+	vertical-align: top;
+	width: 50px;
+}
+
+table.microposts tr td.micropost {
+	border-top-width: 1px solid #ccc;
+	vertical-align: top;
+	padding-top: 10px;
+}
+
+table.microposts tr td.micropost span.timestamp {
+	display: block;
+	font-size: 80%;
+	color: #666;
+}
+
+/* Create micropost jQuery countdown */
+.countdown {
+  	display: inline;
+	font-size: 80%;
+/*  padding-left: 30px;*/
+  	color: #666;
+}
 
 
+div.user_info img {
+	padding-right: 0.1em;
+}
 
+div.user_info a {
+	text-decoration: none;
+}
 
+div.user_info span.user_name {
+    position: absolute;
+}
 
+div.user_info span.microposts {
+	font-size: 80%;
+}
+
+form.new_micropost {
+	margin-bottom: 2em;
+}
+
+form.new_micropost textarea {
+	height: 4em;
+	margin-bottom: 0;
+}
+
+table.profile tr td.sidebar {
+	vertical-align: text-top;
+	width: 15	0px;
+	background-color: #ccc;
+}
+
+table.front tbody tr td.sidebar {
+	background: none repeat scroll 0 0 #CCCCCC;
+	padding: 1em;
+   	vertical-align: top;
+   	width: 30%;
+}
 

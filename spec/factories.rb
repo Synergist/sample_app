@@ -1,11 +1,16 @@
 # By using the symbol ':user', we get Factory Girl to simulate the User model.
-Factory.define :user do |user|
-  user.name                   "John Doe"
-  user.email                  "jdoe@example.com"
-  user.password               "foobar"
-  user.password_confirmation  "foobar"
+FactoryGirl.define do
+  
+  Factory :user do
+    sequence(:name) { |n| "Person #{n}" }
+    sequence(:email) { |n| "person_#{n}@example.com" }
+    password               "foobar"
+    password_confirmation  "foobar"
+  end
+  
+  Factory :micropost do
+    user
+    content "Lorem ipsum"
+  end
 end
 
-Factory.sequence :email do |n|
-  "person-#{n}@example.com"
-end
