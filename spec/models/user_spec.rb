@@ -178,13 +178,20 @@ describe User do
       end
       
       it "should include the user's microposts" do
-        @user.feed.include?(@mp1).should be_true
-        @user.feed.include?(@mp2).should be_true
+        @user.feed.should include(@mp1)
+        @user.feed.should include(@mp2)
       end
       
       it "should not include a different user's microposts" do
         mp3 = FactoryGirl.create(:micropost, :user => FactoryGirl.create(:user))
-        @user.feed.include?(mp3).should be_false
+        @user.feed.should_not include(mp3)
+      end
+      
+      it "should include the micropost of followed users" do
+        followed = FactoryGirl.create(:user)
+        mp3 = FactoryGirl.create(:micropost, :user => followed)
+        @user.follow!(followed)
+        @user.feed.should include(mp3)
       end
     end
   end
